@@ -334,9 +334,7 @@
     <script type="text/javascript">
     
         window.addEventListener("load", mediaSizer);
-        //window.addEventListener("resize", mediaSizer);
-        // Listeners that will react when the page first loads or is resized.
-        // If any of these events take place the mediaSizer() function executes.
+     
     
         var vizList = [
     
@@ -358,6 +356,7 @@
             
     
     
+            
         ];
         // Array of Tableau Server URLs for dashboard or sheet navigation.
     
@@ -366,6 +365,8 @@
             vizCount = 0,
             devType,
             vHideTabs = true,
+            vHeight = 800;
+                vWidth = 415;
                 vHideToolbar = true;
         var options = {
             device: devType,
@@ -377,9 +378,16 @@
             if (window.matchMedia("(max-width: 480px)").matches) {
                 //alert("I am a phone layout!");
                 devType = 'phone';
-                vWidth = 450;
+                vWidth = 420;
                 vHeight = 2000;
                 //options.device = 'phone';
+    
+                launchViz(0);
+    
+    launchViz(1);
+    //launchViz(2);
+    launchViz(5);
+    
             } else if (window.matchMedia("(max-width: 980px)").matches) {
                 //alert("I am a tablet layout!");
                 devType = 'tablet';
@@ -388,21 +396,21 @@
             } else {
                 //alert("I am a desktop layout!");
                 devType = 'desktop';
-                 vWidth = 1666;
-                vHeight = 800;
+                vWidth = 1666;
+                vHeight = 900;
                 //options.device = 'desktop';
-            }
+            
             console.log("devtype: " + devType)
             console.log("launch0")
             launchViz(0);
-            console.log("launch1")
+            console.log("launch1");
             vHeight = 800;
             launchViz(1);
             vHeight = 1000;
-            console.log("launch2")
+            console.log("launch2");
           
-            launchViz(2);
-            console.log("launch3")
+            //launchViz(2);
+            console.log("launch3");
             //launchViz(3);
             launchViz(5);
             vHeight = 1600;
@@ -426,6 +434,9 @@
             launchViz(11);
             launchViz(12);
             launchViz(13);
+    
+             }
+    
     
             // Launches the viz again with the new sizing at the current index of vizList.
         }
@@ -468,6 +479,8 @@
         }
     
     </script>
+    
+    
     
     
 
